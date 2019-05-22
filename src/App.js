@@ -1,20 +1,41 @@
 import React, { Component } from 'react'
 
 class App extends Component {
+  state = {
+    hue: 125,
+    Sat: 125,
+    Light: 50
+  }
   HueSlider = event => {
     console.log(event.target.value)
+    this.setState({
+      hue: event.target.value
+    })
   }
   SatSlider = event => {
     console.log(event.target.value)
+    this.setState({
+      Sat: event.target.value
+    })
   }
   LightSlider = event => {
     console.log(event.target.value)
+    this.setState({
+      Light: event.target.value
+    })
   }
   render() {
     return (
       <>
         <h1 class="MainTitle">Cool Color Picker</h1>
-        <main class="MainContainer">
+        <main
+          class="MainContainer"
+          style={{
+            backgroundColor: `hsl(${this.state.hue}, ${this.state.Sat}%, ${
+              this.state.Light
+            }%)`
+          }}
+        >
           <h2>Hue</h2>
 
           <div>
@@ -40,7 +61,6 @@ class App extends Component {
               max="255"
               onChange={this.SatSlider}
             />
-            <label for="cowbell" />
           </div>
 
           <h2>Lightness</h2>
@@ -54,7 +74,6 @@ class App extends Component {
               max="100"
               onChange={this.LightSlider}
             />
-            <label for="cowbell" />
           </div>
         </main>
       </>

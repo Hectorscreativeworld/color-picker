@@ -1,5 +1,5 @@
 :root {
-  font: 16px / 1 sans-serif;
+  @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 }
 
 html {
@@ -24,7 +24,8 @@ body {
 
 p,
 label {
-  font: 1rem 'Fira Sans', sans-serif;
+  font: 1rem,
+  ;
 }
 
 /* .HueSlider {
